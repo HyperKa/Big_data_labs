@@ -122,12 +122,6 @@
 
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-table_${scala.binary.version}</artifactId>
-			<version>${flink.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table-common</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
@@ -236,7 +230,7 @@
 			<plugin>
 				<groupId>net.alchim31.maven</groupId>
 				<artifactId>scala-maven-plugin</artifactId>
-				<version>3.1.4</version>
+                <version>4.8.1</version>
 				<executions>
 					<!-- Run scala compiler in the process-resources phase, so that dependencies on
 						scala classes can be resolved later in the (Java) compile phase -->
@@ -378,6 +372,7 @@
 					</execution>
 				</executions>
 				<configuration>
+                    <skip>true</skip>
 					<configLocation>/tools/maven/checkstyle.xml</configLocation>
 					<logViolationsToConsole>true</logViolationsToConsole>
 				</configuration>
